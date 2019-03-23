@@ -24,9 +24,9 @@ public class Cannonball {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-
 		Cannonball cannonball = new Cannonball();
 		System.out.println("The Pyramid has: " + cannonball.howManyCannonballsAre(7) + " Cannonballs");
+
 		
 
 	}
