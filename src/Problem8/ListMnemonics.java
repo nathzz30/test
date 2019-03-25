@@ -18,7 +18,7 @@ public class ListMnemonics {
 	public void ListMnemonics (String s)
 	{
 		CartesianProduct carp = new CartesianProduct();
-		//char[] num = s.toCharArray();
+		char[] num = s.toCharArray();
 		ArrayList<String> results = new ArrayList<String>();
 		//int columns = 3^(num.length-1);
 		//int control = 1;
@@ -28,9 +28,9 @@ public class ListMnemonics {
 		ArrayList<String> pair1 = new ArrayList<String>();
 		ArrayList<String> pair2 = new ArrayList<String>();
 		//String [] letters = new String [num.length];
-		for (int i = 0; i < letters.size(); i++)
+		for (int i = 0; i < num.length; i++)
 		{
-			letters.add(digitsMapped[s.indexOf(i)]); 
+			letters.add(digitsMapped[Character.getNumericValue(s.charAt(i))]); 
 		}
 		
 		for (int i = 1; i < letters.size(); i++)
@@ -54,29 +54,33 @@ public class ListMnemonics {
 					results.add(pairs.getFirst()+pairs.getSecond());
 				}
 			}
-			
-			pair1.clear();
-			pair2.clear();
-			for (int x = 0; x < results.size() ; x++ )
+			else 
 			{
-				pair1.add(results.get(x));
+				pair1.clear();
+				pair2.clear();
+				for (int x = 0; x < results.size() ; x++ )
+				{
+					pair1.add(results.get(x));
+				}
+				
+
+				for (int x = 0; x < 3 ; x++ )
+				{
+					char[] letter1 = letters.get(i).toCharArray();
+					String let = Character.toString(letter1[x]);
+					pair2.add(let);
+				}
+				results.clear();
+				carp.setSet1(pair1);
+				carp.setSet2(pair2);
+				carp.CartesianProductOfTwoPairs();
+				for (PairT pairs : carp.getPairs())
+				{
+					results.add(pairs.getFirst()+pairs.getSecond());
+				}
 			}
 			
 
-			for (int x = 0; x < 3 ; x++ )
-			{
-				char[] letter1 = letters.get(i).toCharArray();
-				String let = Character.toString(letter1[x]);
-				pair2.add(let);
-			}
-			results.clear();
-			carp.setSet1(pair1);
-			carp.setSet2(pair2);
-			carp.CartesianProductOfTwoPairs();
-			for (PairT pairs : carp.getPairs())
-			{
-				results.add(pairs.getFirst()+pairs.getSecond());
-			}
 			
 
 		}
@@ -93,6 +97,13 @@ public class ListMnemonics {
 		// TODO Auto-generated method stub
 
 		ListMnemonics list = new ListMnemonics();
+//		String s = "123";
+//		char [] c = s.toCharArray();
+//		for (int i = 0; i< c.length ; i++)
+//		{
+//			System.out.println(c[i]);
+//		}
+		
 		list.ListMnemonics("345");
 		
 
