@@ -117,26 +117,34 @@ public class CartesianProduct {
 		// TODO Auto-generated method stub
 
 		CartesianProduct carp = new CartesianProduct();
-		carp.addStringToSet1("A");
-		carp.addStringToSet1("B");
-		carp.addStringToSet1("C");
-		carp.addStringToSet2("X");
-		carp.addStringToSet2("Y");
-		carp.CartesianProductOfTwoPairs();
-		
-		//carp.ShowCartesianProduct();
-		
-		PairT p = new PairT();
-		p.setFirst("a");
-		p.setSecond("x");
-		
-		PairT p1 = new PairT();
-		p1.setFirst("a");
-		p1.setSecond("b");
-		
-		carp.ThisPairBelongsToTheSets(p);
-		carp.ThisPairBelongsToTheSets(p1);
-		
+		carp.addStringToSet1("PA");
+		carp.addStringToSet1("PB");
+		carp.addStringToSet1("PC");
+		carp.addStringToSet1("RA");
+		carp.addStringToSet1("RB");
+		carp.addStringToSet1("RC");
+		carp.addStringToSet1("SA");
+		carp.addStringToSet1("SB");
+		carp.addStringToSet1("SC");
+
+		carp.addStringToSet2("T");
+		carp.addStringToSet2("U");
+		carp.addStringToSet2("V");
+		carp.ShowCartesianProduct();
+//		carp.CartesianProductOfTwoPairs();
+//		
+//		
+//		PairT p = new PairT();
+//		p.setFirst("a");
+//		p.setSecond("x");
+//		
+//		PairT p1 = new PairT();
+//		p1.setFirst("a");
+//		p1.setSecond("b");
+//		
+//		carp.ThisPairBelongsToTheSets(p);
+//		carp.ThisPairBelongsToTheSets(p1);
+//		
 	}
 
 }
