@@ -54,6 +54,7 @@ public class ReverseString {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+// The solution using iteration was easier to come up with, but the time of execution is better using a recursive function.
 
 		ReverseString reverse = new ReverseString ();
 		
