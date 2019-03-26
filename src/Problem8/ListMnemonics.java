@@ -20,14 +20,10 @@ public class ListMnemonics {
 		CartesianProduct carp = new CartesianProduct();
 		char[] num = s.toCharArray();
 		ArrayList<String> results = new ArrayList<String>();
-		//int columns = 3^(num.length-1);
-		//int control = 1;
-		//String [][] combinations = new String [3][columns];
-		//ArrayList<String> combinations = new ArrayList<String>();
 		ArrayList<String> letters = new ArrayList<String>();
 		ArrayList<String> pair1 = new ArrayList<String>();
 		ArrayList<String> pair2 = new ArrayList<String>();
-		//String [] letters = new String [num.length];
+
 		for (int i = 0; i < num.length; i++)
 		{
 			letters.add(digitsMapped[Character.getNumericValue(s.charAt(i))]); 
@@ -62,32 +58,31 @@ public class ListMnemonics {
 				{
 					pair1.add(results.get(x));
 				}
-				
+				results.clear();
 
 				for (int x = 0; x < 3 ; x++ )
 				{
-					char[] letter1 = letters.get(i).toCharArray();
-					String let = Character.toString(letter1[x]);
+					char[] letter3 = letters.get(i).toCharArray();
+					String let = Character.toString(letter3[x]);
 					pair2.add(let);
 				}
-				results.clear();
+				
 				carp.setSet1(pair1);
 				carp.setSet2(pair2);
+				ArrayList <PairT> pairsBlank = new ArrayList<PairT>();
+				carp.setPairs(pairsBlank);
 				carp.CartesianProductOfTwoPairs();
 				for (PairT pairs : carp.getPairs())
 				{
 					results.add(pairs.getFirst()+pairs.getSecond());
 				}
 			}
-			
-
-			
 
 		}
 		
 		for (String combination : results)
 		{
-			System.out.println("-" + combination + "-");
+			System.out.println(combination);
 		}
 		
 	}
@@ -97,14 +92,8 @@ public class ListMnemonics {
 		// TODO Auto-generated method stub
 
 		ListMnemonics list = new ListMnemonics();
-//		String s = "123";
-//		char [] c = s.toCharArray();
-//		for (int i = 0; i< c.length ; i++)
-//		{
-//			System.out.println(c[i]);
-//		}
 		
-		list.ListMnemonics("345");
+		list.ListMnemonics("55683");
 		
 
 	}
